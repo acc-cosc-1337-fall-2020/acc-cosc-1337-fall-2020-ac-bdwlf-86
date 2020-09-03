@@ -7,5 +7,8 @@ int main()
 
     std::cout << "Your number is " << num;
 
+    num = 0;
+    std::cout << "\nTesting number, " << num;
+    
 	return 0;
 }

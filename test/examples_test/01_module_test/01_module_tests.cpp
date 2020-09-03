@@ -14,6 +14,13 @@ TEST_CASE("Test sum_numbers function")
     REQUIRE(sum_numbers(5, 5) == 10);
 }
 
+TEST_CASE("Test add_to_double_1")
+{
+    REQUIRE(add_to_double_1(0) == .9);
+    REQUIRE(add_to_double_1(1) == 1.9);
+}
+
+
 /*test case echo_variable */
 
 /*test case add_to_double_1 with 0 as parameter*/
