@@ -31,10 +31,10 @@ int main()
 
     cout << fixed << setprecision(2)
         << "Your receipt: \n"
-        <<"Meal Amount:\t" << meal_amount << "\n"
-        <<"Sales tax:\t" << tax_amount <<"\n"
+        << "Meal Amount:\t" << meal_amount << "\n"
+        << "Sales tax:\t" << tax_amount <<"\n"
         << "Tip Amount:\t" << tip_amount << "\n"
-        <<"Total:\t\t" << total;
+        << "Total:\t\t" << total;
 
 	return 0;
 }
