@@ -1,14 +1,21 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
+#include "expressions.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
 /*Test case operator precedence 1 with function argument values 12, 6 and 3 returns 14*/
-
+TEST_CASE("Test operator precedence 1")
+{
+    REQUIRE(operator_precedence_1(int num1, int num2, int num3) == 14);
+}
 /*Test case operator precedence 2 with function argument values 12, 6 and 3 returns 6*/
-
+TEST_CASE("Test operator precedence 2 - parenthesis first")
+{
+    REQUIRE(operator_precedence_2(int num1, int num2, int num3) == 6);
+}
 /*Test case operator precedence 3 with function argument values 12, 6 and 3 returns 6*/
 
 /*Test case operator precedence 3 with function argument values 12, 6 and 3 returns 6*/
