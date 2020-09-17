@@ -18,14 +18,14 @@ int main()
 	cin >> meal_amount;
 
 	//Call get_sales_tax_amount function
-	tax_amount = get_sales_tax_amount(meal_amount);
+    tax_amount = round_to_cents(get_sales_tax_amount(meal_amount));
 
 	//Get user input for tip rate
-	cout << "Enter tip rate:";
+	cout << "Enter tip rate (20% = .20): ";
 	cin >> tip_rate;
 
 	//Call get_tip_amount function
-    tip_amount = get_tip_amount(meal_amount,tip_rate);
+    tip_amount =  round_to_cents(get_tip_amount(meal_amount,tip_rate));
 
     total = tip_amount + tax_amount + meal_amount;
 

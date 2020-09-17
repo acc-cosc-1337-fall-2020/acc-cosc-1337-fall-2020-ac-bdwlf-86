@@ -17,3 +17,9 @@ TEST_CASE("Test Get Tip Amount")
     REQUIRE(get_tip_amount(20,.15) == 3);
     REQUIRE(get_tip_amount(20,.20) == 4);
 }
+
+TEST_CASE("Test Round To Cents")
+{
+    REQUIRE(round_to_cents(1.234) == 1.23);
+    REQUIRE(round_to_cents(2.345) == 2.35);
+}
