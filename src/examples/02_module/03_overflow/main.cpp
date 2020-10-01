@@ -12,7 +12,7 @@ int main()
     num = num + 1;
     cout << num << "\n";
 
-    double small_dbl = __DBL__MIN__;
+    double small_dbl =0.0;
 
     small_dbl = small_dbl / 10;
     cout << small_dbl;

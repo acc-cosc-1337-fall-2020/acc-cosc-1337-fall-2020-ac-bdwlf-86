@@ -3,7 +3,7 @@
 int main()
 {
     int grade = 0;
-    bool result;
+    bool result = false;
     char x = 'Y';
     string if_grade,
             switch_grade;
@@ -25,6 +25,3 @@ int main()
     return 0;
 }
 
-//test push
-
-//test push 2

@@ -1,15 +1,36 @@
-//write includes statements
+#include"loops.h"
 
-//write using statements for cin and cout
-
-
-/*
-Use a do while loop to prompt the user for 
-a number, call the factorial function, and display the number's
-factorial.  Also, loop continues as long as user wants to.
-*/
 int main() 
 {
+    bool choice = true;
+    char option;
 
+    while (choice == true)
+    {
+        display_factorial(factorial(menu()));
+
+        cout << endl;
+        cout << "Do you want to find another factorial?" << endl;
+        cout << "Enter Y or N: ";
+        cin >> option;
+
+        option = toupper(option);
+
+        while (option != 'Y' && option != 'N')
+        {
+            cout << endl;
+            cout << "Please Enter Y or N: " << endl;
+            cout << "Do you want to find another factorial? " << endl;
+            cin >> option;
+
+            option = toupper(option);
+        }
+
+        if (option == 'N')
+        {
+            choice = false;
+        }
+    }
 	return 0;
+
 }

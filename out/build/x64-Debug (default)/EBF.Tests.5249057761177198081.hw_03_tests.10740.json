@@ -1,0 +1,18 @@
+[
+  {
+    "Name": "hw_03_tests",
+    "Command": "C:/Users/Chris/source/repos/acc-cosc-1337-fall-2020/acc-cosc-1337-fall-2020-ac-bdwlf-86/out/build/x64-Debug (default)/test/homework_test/03_decisions_test/hw_03_tests.exe",
+    "Arguments": [
+      "-s"
+    ],
+    "WorkingDirectory": "C:/Users/Chris/source/repos/acc-cosc-1337-fall-2020/acc-cosc-1337-fall-2020-ac-bdwlf-86/out/build/x64-Debug (default)/test/homework_test/03_decisions_test",
+    "ProjectFile": "C:/Users/Chris/source/repos/acc-cosc-1337-fall-2020/acc-cosc-1337-fall-2020-ac-bdwlf-86/test/homework_test/03_decisions_test/CMakeLists.txt",
+    "LineNumber": 3,
+    "Environment": {},
+    "ExpectsFailure": false,
+    "PassRegularExpression": null,
+    "FailRegularExpression": null,
+    "TargetName": "hw_03_tests.exe (test\\homework_test\\03_decisions_test\\hw_03_tests.exe)",
+    "TimeoutInMs": -1
+  }
+]

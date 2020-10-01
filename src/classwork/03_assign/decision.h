@@ -1,7 +1,10 @@
 #include <string>
 #include <iostream>
 
-using std::string, std::cout, std::cin, std::endl;
+using std::string;  
+using std::cout;
+using std::cin;
+using std::endl;
 
 string get_letter_grade_using_if (int grade);
 
@@ -15,4 +18,3 @@ char display_letter_grade(bool result, int grade, char x, string if_grade, strin
 
 char get_another_entry(char x);
 
-//TESTING IDE VS 2019

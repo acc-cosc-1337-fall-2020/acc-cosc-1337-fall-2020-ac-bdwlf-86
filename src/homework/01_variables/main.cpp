@@ -2,7 +2,10 @@
 #include <iostream>
 #include <iomanip>
 
-using std::cout, std::cin, std::setprecision, std::fixed;
+using std::cout;
+using std::cin;
+using std::setprecision;
+using std::fixed;
 
 int main()
 {
