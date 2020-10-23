@@ -28,7 +28,7 @@ accepts a string parameter and returns a string reversed.
 std::string get_reverse_string(std::string dna)
 {
     int n=0;
-    int i = dna.size() -1;
+    int i = dna.size()-1;
     std::string new_dna(dna.size(),' ');
 
     for(int y=0; y < dna.size(); y++)
