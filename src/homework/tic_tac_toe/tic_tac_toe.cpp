@@ -8,63 +8,17 @@ bool TicTacToe::game_over()
 
 void TicTacToe::start_game(string first_player)
 {
-    char a;
-    cout << "Enter X or O :";
-    cin >>a;
-    first_player = toupper(a);
     player = first_player;
     clear_board();
 }
 
 void TicTacToe::mark_board(int position)
 {
-
-    if(position == 1)
+    if(1<=position && position <=9)
     {
         pegs[position-1]= get_player();
         set_next_player();
     }
-    else if(position == 2)
-    {
-        pegs[position-1]= get_player();
-        set_next_player();
-    }
-    else if(position == 3)
-    {
-        pegs[position-1]= get_player();
-        set_next_player();
-    }
-    else if(position == 4)
-    {
-        pegs[position-1]= get_player();
-        set_next_player();
-    }
-    else if(position == 5)
-    {
-        pegs[position-1]= get_player();
-        set_next_player();
-    }
-    else if(position == 6)
-    {
-        pegs[position-1]= get_player();
-        set_next_player();
-    }
-    else if(position == 7)
-    {
-        pegs[position-1]= get_player();
-        set_next_player();
-    }
-    else if(position == 8)
-    {
-        pegs[position-1]= get_player();
-        set_next_player();
-    }
-    else if(position == 9)
-    {
-        pegs[position-1]= get_player();
-        set_next_player();
-    }
-
 }
 
 void TicTacToe::display_board() const
@@ -85,6 +39,7 @@ void TicTacToe::display_board() const
             cout << "| " << pegs[6] << " | " << pegs[7] << " | " << pegs[8] << " |" <<endl;
         }
     }
+
 }
 
 void TicTacToe::set_next_player()
@@ -100,22 +55,22 @@ void TicTacToe::set_next_player()
 }
 
 bool TicTacToe::check_board_full()
-{   int count = 9;
+{   int count = 0;
 
     for(int i=0; i <= 8;i++)
     {
         if(!(pegs[i] == " "))
         {
-            count -= 1;
+            count += 1;
         }
     }
-     if(count > 0)
+     if(count == 9)
      {
-         return false;
+         return true;
      }
      else
      {
-         return true;
+         return false;
      }
 }
 

@@ -3,10 +3,10 @@
 #include <iostream>
 #include <vector>
 
+using std::string, std::vector, std::cout, std:: cin, std::endl;
+
 #ifndef TIC_TAC_TOE_H
 #define TIC_TAC_TOE_H
-
-using std::string, std::vector, std::cout, std:: cin, std::endl;
 
 class TicTacToe
 {
@@ -25,5 +25,4 @@ private:
     void clear_board();
 
 };
-
 #endif

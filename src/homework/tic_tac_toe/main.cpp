@@ -4,8 +4,13 @@ int main()
 {
     TicTacToe game;
     string first_player;
+    char a;
     int position;
     bool status;
+
+    cout << "Enter X or O :";
+    cin >>a;
+    first_player = toupper(a);
 
     game.start_game(first_player);
     do
@@ -19,8 +24,6 @@ int main()
         status = game.game_over();
 
     } while(!status);
-
     game.display_board();
-
   	return 0;
 }
