@@ -19,7 +19,7 @@ public:
 
 private:
     string player;
-    vector<string> pegs{" "," "," "," "," "," "," "," "," "};
+    vector<string> pegs{9," "};
     void set_next_player();
     bool check_board_full();
     void clear_board();
