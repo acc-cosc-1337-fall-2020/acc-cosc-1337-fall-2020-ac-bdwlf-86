@@ -1,11 +1,12 @@
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_manager.h"
 
 int main() 
 {
     TicTacToe game;
+    TicTacToeManager list;
     string first_player;
     char a, b;
-    int position;
     bool status;
 
     do
@@ -17,25 +18,23 @@ int main()
         game.start_game(first_player);
         do
         {
-            game.display_board();
-
-            cout << "Enter position 1 - 9 : ";
-            cin >> position;
-
-            game.mark_board(position);
+            cout << game;
+            cin >> game;
             status = game.game_over();
 
         } while(!status);
-        game.display_board();
+
+        cout << game;
+        list.save_game(game);
 
         cout << endl
-             << "Winner is Player " << game.get_winner() << " !!!" <<endl
-             << endl
-             << "Do you want to play another game? (Y or N)";
+             << "Do you want to play again? Y or N";
         cin >> b;
         b = toupper(b);
 
     } while(b == 'Y');
+
+    cout << list;
 
     return 0;
 }

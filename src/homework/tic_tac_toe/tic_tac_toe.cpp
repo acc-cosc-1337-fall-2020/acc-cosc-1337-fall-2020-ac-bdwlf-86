@@ -3,17 +3,7 @@
 
 bool TicTacToe::game_over() {
 
-    if (check_column_win())
-    {
-        set_winner();
-        return true;
-    }
-    else if(check_row_win())
-    {
-        set_winner();
-        return true;
-    }
-    else if(check_diagonal_win())
+    if (check_column_win() || check_row_win() || check_diagonal_win())
     {
         set_winner();
         return true;
@@ -36,30 +26,9 @@ void TicTacToe::mark_board(int position)
 {
     if(1<=position && position <=9)
     {
-        pegs[position-1]= get_player();
+        pegs[position-1] = get_player();
         set_next_player();
     }
-}
-
-void TicTacToe::display_board() const
-{
-    for(int i=0;i<=2;++i)
-    {
-        if(i==0)
-        {
-            cout << endl;
-            cout << "| " << pegs[0] << " | " << pegs[1] << " | " << pegs[2] << " |" <<endl;
-        }
-        else if(i==1)
-        {
-            cout << "| " << pegs[3] << " | " << pegs[4] << " | " << pegs[5] << " |" <<endl;
-        }
-        else
-        {
-            cout << "| " << pegs[6] << " | " << pegs[7] << " | " << pegs[8] << " |" <<endl;
-        }
-    }
-
 }
 
 bool TicTacToe::check_column_win()
@@ -266,12 +235,11 @@ void TicTacToe::set_winner()
     else {
         winner = "X";
     }
-
 }
 
 void TicTacToe::set_next_player()
 {
-    if(player == "X" || player == "x")
+    if(player == "X")
     {
         player = "O";
     }
@@ -308,3 +276,26 @@ void TicTacToe::clear_board()
         pegs[i] = " ";
     }
 }
+
+ostream& operator << (ostream& out, const TicTacToe& game)
+{
+    out << endl
+        << "| " << game.pegs[0] << " | " << game.pegs[1] << " | " << game.pegs[2] << " |" <<endl
+        << "| " << game.pegs[3] << " | " << game.pegs[4] << " | " << game.pegs[5] << " |" <<endl
+        << "| " << game.pegs[6] << " | " << game.pegs[7] << " | " << game.pegs[8] << " |" <<endl
+        << endl;
+
+    return out;
+}
+
+istream& operator >> (istream& in, TicTacToe& game)
+{
+    int position=0;
+    cout << "Enter position 1 - 9 : ";
+    in>>position;
+    game.mark_board(position);
+
+    return in;
+}
+
+
