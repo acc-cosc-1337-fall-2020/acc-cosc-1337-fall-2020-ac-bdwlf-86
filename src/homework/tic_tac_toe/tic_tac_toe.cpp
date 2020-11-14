@@ -26,202 +26,11 @@ void TicTacToe::mark_board(int position)
 {
     if(1<=position && position <=9)
     {
-        pegs[position-1] = get_player();
+        board[position-1] = get_player();
         set_next_player();
     }
 }
 
-bool TicTacToe::check_column_win()
-{
-    int a = 0, b = 0;
-    for(int i=0;i<1;i++)
-    {
-        if(pegs[0] == "X")
-            a++;
-        else if(pegs[0] == "O")
-            b++;
-
-        if(pegs[3] == "X")
-            a++;
-        else if(pegs[3] == "O")
-            b++;
-
-        if(pegs[6] == "X")
-            a++;
-        else if(pegs[6] == "O")
-            b++;
-
-        if(a==3 || b==3)
-        {
-            set_winner();
-            return true;
-        }
-    }
-
-    a=0;
-    b=0;
-
-    for(int i=0;i<1;i++)
-    {
-        if(pegs[1] == "X")
-            a++;
-        else if(pegs[1] == "O")
-            b++;
-
-        if(pegs[4] == "X")
-            a++;
-        else if(pegs[4] == "O")
-            b++;
-
-        if(pegs[7] == "X")
-            a++;
-        else if(pegs[7] == "O")
-            b++;
-
-        if(a==3 || b==3)
-        {
-            set_winner();
-            return true;
-        }
-    }
-
-    a=0;
-    b=0;
-
-    for(int i=0;i<1;i++)
-    {
-        if(pegs[2] == "X")
-            a++;
-        else if(pegs[2] == "O")
-            b++;
-
-        if(pegs[5] == "X")
-            a++;
-        else if(pegs[5] == "O")
-            b++;
-
-        if(pegs[8] == "X")
-            a++;
-        else if(pegs[8] == "O")
-            b++;
-
-        if(a==3 || b==3)
-        {
-            set_winner();
-            return true;
-        }
-    }
-    return false;
-}
-bool TicTacToe::check_row_win()
-{
-    int a = 0, b = 0;
-    for(int i=0;i<=2;++i)
-    {
-        if (pegs[i] == "X") {
-            a++;
-        }
-        else if(pegs[i] == "O"){
-            b++;
-        }
-        if(a==3 || b==3)
-            return true;
-    }
-
-    a=0;
-    b=0;
-
-    for(int i=3;i<=5;i++)
-    {
-        if (pegs[i] == "X") {
-            a++;
-        }
-        else if(pegs[i] == "O"){
-            b++;
-        }
-        if(a==3 || b==3)
-            return true;
-    }
-
-    a=0;
-    b=0;
-
-    for(int i=6; i<=8;++i)
-    {
-        if (pegs[i] == "X") {
-            a++;
-        }
-        else if(pegs[i] == "O"){
-            b++;
-        }
-        if(a==3 || b==3)
-            return true;
-    }
-    return false;
-}
-bool TicTacToe::check_diagonal_win()
-{
-    int a = 0, b = 0;
-    for(int i=0;i<1;++i)
-    {
-        if (pegs[0] == "X")
-        {
-            a++;
-        }
-        else if(pegs[0] == "O"){
-            b++;
-        }
-
-        if (pegs[4] == "X")
-        {
-            a++;
-        }
-        else if(pegs[4] == "O"){
-            b++;
-        }
-
-        if (pegs[8] == "X")
-        {
-            a++;
-        }
-        else if(pegs[8] == "O"){
-            b++;
-        }
-        if(a == 3 || b == 3) {return true;}
-    }
-
-    a=0;
-    b=0;
-
-    for(int i=0;i<1;++i)
-    {
-        if (pegs[2] == "X")
-        {
-            a++;
-        }
-        else if(pegs[2] == "O"){
-            b++;
-        }
-
-        if (pegs[4] == "X")
-        {
-            a++;
-        }
-        else if(pegs[4] == "O"){
-            b++;
-        }
-
-        if (pegs[6] == "X")
-        {
-            a++;
-        }
-        else if(pegs[6] == "O"){
-            b++;
-        }
-        if(a == 3 || b == 3) {return true;}
-    }
-    return false;
-}
 void TicTacToe::set_winner()
 {
     if(check_board_full())
@@ -254,7 +63,7 @@ bool TicTacToe::check_board_full()
 
     for(int i=0; i <= 8;i++)
     {
-        if(!(pegs[i] == " "))
+        if(!(board[i] == " "))
         {
             count += 1;
         }
@@ -273,17 +82,30 @@ void TicTacToe::clear_board()
 {
     for(int i=0; i <= 8;i++)
     {
-        pegs[i] = " ";
+        board[i] = " ";
     }
 }
 
 ostream& operator << (ostream& out, const TicTacToe& game)
 {
-    out << endl
-        << "| " << game.pegs[0] << " | " << game.pegs[1] << " | " << game.pegs[2] << " |" <<endl
-        << "| " << game.pegs[3] << " | " << game.pegs[4] << " | " << game.pegs[5] << " |" <<endl
-        << "| " << game.pegs[6] << " | " << game.pegs[7] << " | " << game.pegs[8] << " |" <<endl
-        << endl;
+    if(sqrt(game.board.size()) == 3)
+    {
+        out << endl
+            << "| " << game.board[0] << " | " << game.board[1] << " | " << game.board[2] << " |" <<endl
+            << "| " << game.board[3] << " | " << game.board[4] << " | " << game.board[5] << " |" <<endl
+            << "| " << game.board[6] << " | " << game.board[7] << " | " << game.board[8] << " |" <<endl
+            << endl;
+    }
+
+    else if(sqrt(game.board.size()) == 4)
+    {
+        out << endl
+            << "| " << game.board[0] << " | " << game.board[1] << " | " << game.board[2] << " |" << game.board[3] << " |" <<endl
+            << "| " << game.board[4] << " | " << game.board[5] << " | " << game.board[6] << " |" << game.board[7] << " |" <<endl
+            << "| " << game.board[8] << " | " << game.board[9] << " | " << game.board[10] << " |" << game.board[11] << " |" <<endl
+            << "| " << game.board[12] << " | " << game.board[13] << " | " << game.board[14] << " |" << game.board[15] << " |" <<endl
+            << endl;
+    }
 
     return out;
 }

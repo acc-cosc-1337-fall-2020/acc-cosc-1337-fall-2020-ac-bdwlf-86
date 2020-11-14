@@ -2,18 +2,18 @@
 
 #include "tic_tac_toe_manager.h"
 
-void TicTacToeManager::save_game(TicTacToe b)
+void TicTacToeManager::save_game(unique_ptr<TicTacToe> b)
 {
-    games.push_back(b);
-    update_winner_count(b.get_winner());
+    games.push_back(move(b));
+    update_winner_count(b->get_winner());
     get_winner_total(o_win, x_win, tie);
 }
 
 ostream& operator << (ostream& out, const TicTacToeManager& manager)
 {
-    for(auto & x : manager.games)
+    for(auto & game : manager.games)
     {
-        out << x;
+        out << *game;
     }
     return out;
 }

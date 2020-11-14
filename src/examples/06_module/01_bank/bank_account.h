@@ -1,5 +1,7 @@
 //bank_account.h
 //HEADER GUARDS
+#include<iostream>
+
 #ifndef BRANCH_BANK_H
 #define BRANCH_BANK_H
 
@@ -30,6 +32,12 @@ public://access specifier-makes class function available to users of the class
     static int get_bank_balance(){return bank_balance;}
     friend void friend_display_balance(const BankAccount& account);//THIS IS A FREE FUNCTION! NOT PART OF THE CLASS
     friend void BranchBank::update_balance(int b);
+    friend std::ostream& operator<<(std::ostream& out, const BankAccount& a);
+    friend std::istream& operator>>(std::istream& in, BankAccount& a);
+    friend BankAccount operator+(const BankAccount& a1, const BankAccount& a2);
+
+protected:
+
 private://access specifier-hides variables from users of the class
     int balance{0};
     static int bank_balance;
@@ -40,7 +48,3 @@ private://access specifier-hides variables from users of the class
 void display_bank_account(BankAccount& account);
 
 BankAccount get_bank_account();
-
-
-
-
