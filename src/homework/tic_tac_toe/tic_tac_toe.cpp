@@ -59,30 +59,22 @@ void TicTacToe::set_next_player()
 }
 
 bool TicTacToe::check_board_full()
-{   int count = 0;
-
-    for(int i=0; i <= 8;i++)
+{
+    for(auto peg: board)
     {
-        if(!(board[i] == " "))
+        if(peg != "X" && peg != "O")
         {
-            count += 1;
+            return false;
         }
     }
-     if(count == 9)
-     {
-         return true;
-     }
-     else
-     {
-         return false;
-     }
+    return true;
 }
 
 void TicTacToe::clear_board()
 {
-    for(int i=0; i <= 8;i++)
+    for(auto peg: board)
     {
-        board[i] = " ";
+        peg = " ";
     }
 }
 

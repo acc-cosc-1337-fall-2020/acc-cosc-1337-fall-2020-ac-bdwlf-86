@@ -15,7 +15,7 @@ using   std::string, std::vector, std::cout, std:: cin,
 class TicTacToe
 {
 public:
-    TicTacToe(int s) : board (s * s ," "){};
+    TicTacToe(int s) : board (s * s ," "){}
     bool game_over();
     void start_game(string first_player);
     void mark_board(int position);
