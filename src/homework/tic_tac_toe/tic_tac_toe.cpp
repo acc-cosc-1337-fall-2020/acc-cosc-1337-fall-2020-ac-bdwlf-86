@@ -24,11 +24,15 @@ void TicTacToe::start_game(string first_player)
 
 void TicTacToe::mark_board(int position)
 {
-    if(1<=position && position <=9)
+    board[position - 1] = player;
+    set_next_player();
+
+    /*if(1<=position && position <=9)
     {
         board[position-1] = get_player();
         set_next_player();
     }
+     */
 }
 
 void TicTacToe::set_winner()
@@ -110,6 +114,18 @@ istream& operator >> (istream& in, TicTacToe& game)
     game.mark_board(position);
 
     return in;
+}
+
+bool TicTacToe::check_column_win() {
+    return false;
+}
+
+bool TicTacToe::check_row_win() {
+    return false;
+}
+
+bool TicTacToe::check_diagonal_win() {
+    return false;
 }
 
 

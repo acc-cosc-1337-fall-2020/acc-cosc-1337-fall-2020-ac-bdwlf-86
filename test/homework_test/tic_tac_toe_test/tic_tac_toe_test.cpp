@@ -355,7 +355,7 @@ TEST_CASE("Test win by first row 4x4")
     REQUIRE(game->get_winner() == "X");
 }
 
-TEST_CASE("Test win by second row 3x3")
+TEST_CASE("Test win by second row 4x4")
 {
     unique_ptr<TicTacToe> game;
     game = make_unique<TicTacToe4>();
@@ -377,7 +377,7 @@ TEST_CASE("Test win by second row 3x3")
     REQUIRE(game->get_winner() == "X");
 }
 
-TEST_CASE("Test win by third row 3x3")
+TEST_CASE("Test win by third row 4x4")
 {
     unique_ptr<TicTacToe> game;
     game = make_unique<TicTacToe4>();

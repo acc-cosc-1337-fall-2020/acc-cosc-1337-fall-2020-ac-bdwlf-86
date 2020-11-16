@@ -18,18 +18,15 @@ int main()
         cout << endl
              << "Please type 3 or 4 to select game type: ";
         cin >> board_size;
-        while (board_size == 3 || board_size == 4)
+
+        if (board_size == 3)
         {
-            if (board_size == 3)
-            {
-                game = make_unique<TicTacToe3>();
-            }
+            game = make_unique<TicTacToe3>();
+        }
 
-            else
-            {
-                game = make_unique<TicTacToe4>();
-            }
-
+        else
+        {
+            game = make_unique<TicTacToe4>();
         }
 
         cout << "Enter X or O :";
