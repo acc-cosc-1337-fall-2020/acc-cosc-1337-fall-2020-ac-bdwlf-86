@@ -86,7 +86,7 @@ TEST_CASE("Tic Tac Toe Game Verification for 4x4") {
     game->mark_board(8);
     REQUIRE(game->game_over() == false);
     game->mark_board(12);
-    REQUIRE(game->game_over() == true);
+    REQUIRE(game->game_over() == false);
     game->mark_board(11);
     REQUIRE(game->game_over() == false);
     game->mark_board(10);
@@ -424,7 +424,7 @@ TEST_CASE("Test win by fourth row 4x4")
 TEST_CASE("Test win diagonally from top left 4x4")
 {
     unique_ptr<TicTacToe> game;
-    game = make_unique<TicTacToe3>();
+    game = make_unique<TicTacToe4>();
     game->start_game("X");
     game->mark_board(1);
     REQUIRE(game->game_over() == false);
@@ -446,7 +446,7 @@ TEST_CASE("Test win diagonally from top left 4x4")
 TEST_CASE("Test win diagonally from top right 4x4")
 {
     unique_ptr<TicTacToe> game;
-    game = make_unique<TicTacToe3>();
+    game = make_unique<TicTacToe4>();
     game->start_game("X");
     game->mark_board(4);
     REQUIRE(game->game_over() == false);

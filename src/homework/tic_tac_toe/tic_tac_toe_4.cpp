@@ -22,8 +22,16 @@ bool TicTacToe4::check_row_win() {
 }
 
 bool TicTacToe4::check_diagonal_win() {
-    return (board[0] != " " && board[0] == board[5] && board[0] == board[10] && board[0] == board[15]) ||
-           (board[3] != " " && board[3] == board[6] && board[3] == board[9] && board[3] == board[12]);
+    if(board[0] != " " && board[0] == board[5] && board[0] == board[10] && board[0] == board[15])
+    {
+        return true;
+    }
+    else if(board[3] != " " && board[3] == board[6] && board[3] == board[9] && board[3] == board[12])
+    {
+        return true;
+    }
+    else
+        return false;
 }
 
 
