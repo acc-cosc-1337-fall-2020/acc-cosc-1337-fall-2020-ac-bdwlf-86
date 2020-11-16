@@ -458,7 +458,7 @@ TEST_CASE("Test win diagonally from top right 4x4")
     REQUIRE(game->game_over() == false);
     game->mark_board(10);
     REQUIRE(game->game_over() == false);
-    game->mark_board(4);
+    game->mark_board(3);
     REQUIRE(game->game_over() == false);
     game->mark_board(13);
     REQUIRE(game->game_over() == true);
